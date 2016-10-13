@@ -1,0 +1,58 @@
+@font-face {
+    font-family: FrancoisOne;
+    src: url(FrancoisOne.ttf);
+}
+
+#stoichBoard{
+	background-color: gray;
+	width: 800px;
+	height:525px;
+	margin-left: 20px;
+	margin-bottom: 50px;
+	border: 2px solid black;
+}
+#ions{
+		float: left;
+	margin-left: 25px;
+	margin-bottom: 50px;
+	width: 500px;
+
+}
+
+.draggable {
+    display: inline-block;
+    width: 75px;
+	height:40px;
+	padding: 5px 0 5px 0;
+	margin: 10px;
+	background-color: #663399;
+	color: white;
+	font: FrancisOne;
+	font-size: 20px;
+	padding-top: 15px;
+	text-align: center;
+	border-radius: 5px;
+	border: 1px solid black;
+}
+
+.droppable {
+	width: 200px;
+	height: 55px;
+	text-align: center;
+	margin-left: 15px;
+	margin-right: 0px;
+	margin-top:10px;
+	display: inline-block;
+	vertical-align:top;
+	background-color: #6666cc;
+	border: 2px solid black;
+	border-radius: 5px;
+	font-family: sans-serif;
+	padding: 5px;
+}
+#complete{
+	font-weight: bold;
+	font-size: 20px;
+	color: red;
+	text-align:center;
+}

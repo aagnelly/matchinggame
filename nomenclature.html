@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang=en>
+<head>
+<title>Nomenclature</title>
+<meta charset=utf-8>
+<link  rel="stylesheet" type="text/css" href="chemistry.css">
+<link  rel="stylesheet" type="text/css" href="nomenclature.css">
+<meta name="copyright" content="Audra Agnelly">
+<meta name="author" content="Audra Agnelly">
+
+	<script src="nomenclaturematching.js"></script>
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script>
+
+$(function () {
+	var count = 0;
+	var i = 0;
+    $(".draggable").draggable({ revert: 'invalid' });
+    $(".droppable").droppable({ 
+		//tolerance: 'fit',
+        accept: function(drag) {
+            var dropId = $(this).attr('data-id');
+            var dragId = $(drag).attr('data-id');
+			return dropId === dragId;
+			},
+		drop: function(){
+			count++;
+			document.getElementById("numCorrect").innerHTML = count;
+		},	
+		deactivate: function (drag) {
+			if (count > 9){
+			    document.getElementById("complete").innerHTML = "Well Done!";
+			}
+		}
+		});
+	});	
+</script>
+
+</head>
+
+
+
+
+<body>
+<div id="wrapper">
+<div>
+
+<h1>Owl Chemistry</h1>
+</div>
+<h2>Nomenclature</h2>
+<!--nav menu-->
+<nav>
+  <ul>
+        <li><a href="index.html" title="Home">Home</a></li>
+        <li><a href="nomenclature.html" title="Nomenclature">Nomenclature</a></li>
+        <li><a href="stoichiometry.html" title="Stoichiometry">Stoichiometry</a></li>
+		<li class="dropdown"><a href="javascript:void(0)" class="dropbtn" onclick="dropDown()">Gases</a>
+			<div class="dropdown-content" id="myDropdown">
+			  <a href="gasSimulation.html">Gas Simulation</a>
+			  <a href="gases.html">Gas Law Quiz</a>
+			</div>
+		</li>
+  </ul>
+</nav>
+<div id="content">
+
+
+<p>Test your knowledge of ions. Drag the correct symbol to each name.</p>
+<p id="score">Number Correct: <span id="numCorrect">0</span></p>
+<p id="complete"></p>
+
+<!--drop and drag workspace-->
+<div id="stoichBoard" >
+<div id="ions">
+<div class="droppable" id="drop1" data-id="1">Nitrate</div>
+<div class="droppable" id="drop2" data-id="2">Sulfide</div><br>
+<div class="droppable" id="drop3" data-id="3">Carbonate</div>
+<div class="droppable" id="drop4" data-id="4">Chloride</div><br>
+<div class="droppable" id="drop5" data-id="5">Sulfate</div>
+<div class="droppable" id="drop6" data-id="6">Oxide</div><br>
+<div class="droppable" id="drop7" data-id="7">Ammonium</div>
+<div class="droppable" id="drop8" data-id="8">Hydroxide</div><br>
+<div class="droppable" id="drop9" data-id="9">Nitride</div>
+<div class="droppable" id="drop10" data-id="10">Phosphate</div>
+</div>
+
+<div id = "choices">
+<div class="draggable" id="drag1" data-id="4">Cl<sup>-</sup></div>
+<div class="draggable" id="drag2" data-id="1">NO<sub>3</sub><sup>-</sup></div>
+<div class="draggable" id="drag3" data-id="8">OH<sup>-</sup></div>
+<div class="draggable" id="drag4" data-id="3">CO<sub>3</sub><sup>2-</sup></div>
+<div class="draggable" id="drag5" data-id="5">SO<sub>4</sub><sup>2-</sup></div>
+<div class="draggable" id="drag6" data-id="7">NH<sub>4</sub><sup>+</sup></div>
+<div class="draggable" id="drag7" data-id="2">S<sup>2-</sup></div>
+<div class="draggable" id="drag8" data-id="10">PO<sub>4</sub><sup>3-</sup></div>
+<div class="draggable" id="drag9" data-id="6">O<sup>2-</sup></div>
+<div class="draggable" id="drag10" data-id="9">N<sup>3-</sup></div>
+</div>
+
+
+</div>
+
+
+
+</div><!--close content-->
+<footer>
+<small>Copyright &#169; 2016 Audra Agnelly<br/>
+</small>
+
+</footer>
+</div><!--close wrapper-->
+<br>
+<a href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fnova.umuc.edu%2F~ct388a22%2Fnomenclature.html">W3 Validation</a>
+<p>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+    <img style="border:0;width:88px;height:31px"
+        src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+        alt="Valid CSS!" />
+    </a>
+</p>
+      
+</body>
+</html>
