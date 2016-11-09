@@ -1,2 +1,2 @@
 # matchinggame
-Drag and drop matching game to practice chemical nomenclature
+Javascript drag and drop matching game to practice chemical nomenclature
